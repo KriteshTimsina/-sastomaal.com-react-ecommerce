@@ -1,0 +1,21 @@
+/* .main {
+    display: flex;
+} */
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: auto;
+        width: 100%;
+
+        align-items: center;
+        justify-content: center;
+    }
+}
