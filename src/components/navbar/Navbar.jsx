@@ -25,14 +25,16 @@ export default function Navbar() {
                     setSearch(ref.current.value)
                 }
                 }>
-                    <input ref={ref} className="search__input" type="text" placeholder="Search Products" />
-                    <BiSearch className="search__icon" />
+                    <div className="search__bar">
+                        <input ref={ref} className="search__input" type="text" placeholder="Search Products" />
+                        <BiSearch className="search__icon" />
+                    </div>
                 </form>
                 <div className="nav__items">
                     <Link to={'/'}>Home</Link>
-                    <Link to={'/Products'}>Categories</Link>
+                    <Link to={'/category'}>Categories</Link>
                     <Link to={'/Order'}>Order</Link>
-                    <Link to={'/Contact'}>Contact</Link>
+                    <Link to={'/Cart'}>Cart</Link>
                     <input type="button" value='Register' className="button buttons__navbar" onClick={handleRegister} />
 
                 </div>

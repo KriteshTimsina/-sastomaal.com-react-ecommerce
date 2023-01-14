@@ -45,11 +45,9 @@ h4 {
     object-fit: cover;
 }
 
+
+
 .product__price {
     color: orangered;
     margin-top: 10px;
-}
-
-.product__price:hover {
-    border-bottom: 1px solid orangered;
 }

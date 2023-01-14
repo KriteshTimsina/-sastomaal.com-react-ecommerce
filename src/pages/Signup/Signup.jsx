@@ -1,7 +1,44 @@
-import React from 'react'
+import axios from 'axios';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+// import ApiCallback from '../../components/ApiCallback/ApiCallback';
+import '../login/login.css';
 
-export default function Signup() {
+const Signup = () => {
+  const navigate = useNavigate();
+  async function getUserData() {
+    const userData = await axios.post('https://dummyjson.com/auth/login',
+      {
+        username: 'kminchelle',
+        password: '0lelplR',
+      })
+    console.log(userData);
+  }
   return (
-    <div>Signup</div>
+    <div className="login__page">
+      <div className="login__container">
+
+        <form action="#">
+          <div className="container username">
+            <input type="email" placeholder='Email Address' required autoComplete='false' />
+          </div>
+          <div className="container password">
+            <input type="password" placeholder='Password' required autoComplete='false' />
+          </div>
+          <div className="container password">
+            <input type="password" placeholder='Confirm Password' required autoComplete='false' />
+          </div>
+
+          <div className='container btn'>
+            <button onClick={getUserData} className='button btn__login'>Register</button>
+          </div>
+          <div className='container link'>
+            <span className='register__link'>Already have an account?<a style={{ textDecoration: "underline", cursor: "pointer" }} onClick={() => navigate("/login")}>Login</a></span>
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }
+
+export default Signup;

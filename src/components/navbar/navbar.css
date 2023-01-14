@@ -45,14 +45,15 @@
 
 .nav__search {
     flex: 1.5;
-    position: relative;
+}
 
+.search__bar {
+    position: relative;
 }
 
 .search__input {
 
-    width: 50%;
-
+    width: 60%;
     height: 40px;
     text-indent: 4px;
     border-radius: 7px;
@@ -63,9 +64,10 @@
     position: absolute;
     font-size: 1.2rem;
     cursor: pointer;
-    top: 50%;
+    right: 43%;
+    bottom: 0%;
     transform: translateY(-50%);
-    right: 235px;
+
     color: gray;
 }
 

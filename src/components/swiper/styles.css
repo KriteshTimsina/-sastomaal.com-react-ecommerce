@@ -1,22 +1,24 @@
 .mySwiper {
-    margin-bottom: 10px;
-    width: 700px;
-    height: 400px;
+    margin-top: -19px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    height: 300px;
+    width: 1000px;
     /* background-color: red; */
     /* border: 2px solid red; */
 }
 
 
 .image-container {
+    object-fit: cover;
+    background-size: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .image-container img {
-    width: 700px;
-    height: 500px;
-    object-fit: contain;
+    width: 1000px;
+    height: 300px;
+
+    object-fit: cover;
 
 }

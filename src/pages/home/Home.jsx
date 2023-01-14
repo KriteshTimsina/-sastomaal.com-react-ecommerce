@@ -5,6 +5,7 @@ import { useGlobalContext } from '../../context';
 import ProductCategory from '../../components/category/ProductCategory';
 import Swiper from '../../components/swiper/Swiper';
 
+
 const Home = () => {
 
   const { isLoading, products } = useGlobalContext();
@@ -15,8 +16,9 @@ const Home = () => {
   return (
     <div className="main">
       <Swiper />
-      <ProductCategory />
+      <h3 className='heading'>Our Products</h3>
       <div className='container'>
+
         {
           products.map((product) => {
             return (
@@ -28,6 +30,8 @@ const Home = () => {
         }
 
       </div>
+      <ProductCategory />
+
     </div>
 
   )
