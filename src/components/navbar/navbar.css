@@ -95,6 +95,11 @@
     color: rgb(233, 93, 42);
 }
 
+.user--details {
+    display: flex;
+    gap: 7px;
+}
+
 .buttons__navbar {
     color: green;
     padding: none;

@@ -4,14 +4,15 @@ import { BiSearch } from 'react-icons/bi';
 import { Link, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../context";
 import { useRef } from "react";
-
+import { useAuth0 } from "@auth0/auth0-react";
 export default function Navbar() {
     const { setSearch } = useGlobalContext();
+    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     const ref = useRef();
-    const navigate = useNavigate();
-    function handleRegister() {
-        navigate('/login');
-    }
+    // const navigate = useNavigate();
+    // function handleRegister() {
+    //     navigate('/login');
+    // }
 
     return (
 
@@ -35,7 +36,21 @@ export default function Navbar() {
                     <Link to={'/category'}>Categories</Link>
                     <Link to={'/Order'}>Order</Link>
                     <Link to={'/Cart'}>Cart</Link>
-                    <input type="button" value='Register' className="button buttons__navbar" onClick={handleRegister} />
+
+                    {
+                        isAuthenticated &&
+                        <div className="user--details">
+                            <img width={20} src={user.picture} alt={user.name} />
+                            <p>{user.email}</p>
+                        </div>
+                    }
+                    {
+                        isAuthenticated ?
+                            <input type="button" value='Logout' className="button buttons__navbar" onClick={() => logout({ returnTo: window.location.origin })} />
+                            :
+                            <input type="button" value='Login' className="button buttons__navbar" onClick={() => loginWithRedirect()} />
+
+                    }
 
                 </div>
             </div>
